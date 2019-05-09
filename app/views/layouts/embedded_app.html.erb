@@ -4,6 +4,14 @@
     <meta charset="utf-8" />
     <% application_name = ShopifyApp.configuration.application_name %>
     <title><%= application_name %></title>
+
+    <script>
+      var ShopifyConfig = {
+        shopOrigin: "<%= current_shop.shopify_domain %>",
+        apiKey: "<%= ENV.fetch('SHOPIFY_API_KEY') %>"
+      };
+    </script>
+
     <%= stylesheet_link_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= csrf_meta_tags %>
